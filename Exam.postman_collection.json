@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "6b9f0401-56d0-44a6-a059-2079747509ed",
+		"name": "Exam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40691098"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Shukurulloh2003\",\r\n    \"email\": \"shukurullo12@gmail.com\",\r\n    \"password\": \"01292003\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"shukurullo12@gmail.com\",\r\n    \"password\": \"01292003\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new_post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjdhZjBlMWMxZjI1N2M3ZGE5ZDE0MDc4IiwiaWF0IjoxNzM5NTI1NjYwLCJleHAiOjE3Mzk2MTIwNjB9.rdfEkorWEsH20fW9-4ABNBz79338iw8b7QcnF4gCLZ0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"title\": \"JavaScriptda Asinxron Dasturlash\",\r\n    \"content\": \"Asinxron dasturlash JavaScriptda muhim konseptlardan biri hisoblanadi. Callback, Promise va Async/Await yordamida biz kodni samarali boshqarishimiz mumkin. Ushbu maqolada ushbu usullar haqida batafsil tushuntiramiz va amaliy misollarni ko‘rib chiqamiz.\",\r\n    \"category\": \"Dasturlash\",\r\n    \"views\": 50\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/posts/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"posts",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get/post/by/category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/posts/category/Dasturlash",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"posts",
+						"category",
+						"Dasturlash"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get/top/posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/posts/top",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"posts",
+						"top"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update/posts/by/id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjdhZjBlMWMxZjI1N2M3ZGE5ZDE0MDc4IiwiaWF0IjoxNzM5NTI1NjYwLCJleHAiOjE3Mzk2MTIwNjB9.rdfEkorWEsH20fW9-4ABNBz79338iw8b7QcnF4gCLZ0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Yangilangan post sarlavhasi\",\r\n    \"content\": \"Bu postning yangi kontenti. Hozircha shunday yozildi.\",\r\n    \"category\": \"Marketing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/posts/67af1100179784fff311049d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"posts",
+						"67af1100179784fff311049d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get/user/posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjdhZjBlMWMxZjI1N2M3ZGE5ZDE0MDc4IiwiaWF0IjoxNzM5NTI1NjYwLCJleHAiOjE3Mzk2MTIwNjB9.rdfEkorWEsH20fW9-4ABNBz79338iw8b7QcnF4gCLZ0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/users/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete/post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjdhZjBlMWMxZjI1N2M3ZGE5ZDE0MDc4IiwiaWF0IjoxNzM5NTI1NjYwLCJleHAiOjE3Mzk2MTIwNjB9.rdfEkorWEsH20fW9-4ABNBz79338iw8b7QcnF4gCLZ0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/posts/67af1053179784fff311048e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"posts",
+						"67af1053179784fff311048e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/posts/search?title=JavaScriptda Asinxron Dasturlash",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"posts",
+						"search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "JavaScriptda Asinxron Dasturlash"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
